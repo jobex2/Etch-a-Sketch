@@ -1,11 +1,48 @@
 const container = document.querySelector('#grid-container');
+const gridReset = document.querySelector('button');
 
-for(let i = 0; i < 16*16; i++)
+createGrid(25);
+
+
+//function definitons
+
+function hover()
 {
-    const grid = document.createElement('div');
-    grid.classList.add('grid');
-    grid.style.cssText = 'background-color: black; width: 30px; height: 30px; flex-shrink: 0';
-    container.appendChild(grid);
-}
+    const squares = document.querySelectorAll('.square');
 
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'yellow';
+        });
+    });
+}
+function createGrid (num)
+{
+    if(num >100)
+    {
+        alert("Cannot have a grid larger than 100, grid set to 100");
+        num = 100;
+    }
+    let sWidth = (100/num);
+    for(let i = 0; i < num*num; i++)
+    {
+        const grid = document.createElement('div');
+        grid.classList.add('square');
+        grid.style.width = `${sWidth}%`;
+        grid.style.paddingBottom = `${sWidth}%`;
+        container.appendChild(grid);
+    }
+    hover();
+}
+function removeGrid()
+{
+    while(container.lastChild)
+    {
+        container.removeChild(container.lastChild);
+    }
+    let grid = prompt('Please enter new grid size');
+    let intGrid = parseInt(grid);
+    createGrid(intGrid)
+    
+}
 
