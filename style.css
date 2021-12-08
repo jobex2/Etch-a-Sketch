@@ -1,0 +1,14 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+#grid-container{
+    margin: 20px 200px;
+    height: 480px;
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
