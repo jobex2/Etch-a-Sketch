@@ -12,7 +12,7 @@ function hover()
 
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'yellow';
+            square.style.backgroundColor = 'black';
         });
     });
 }
@@ -45,4 +45,17 @@ function removeGrid()
     createGrid(intGrid)
     
 }
+function shade()
+{
+    const squares = document.querySelectorAll('.square');
 
+    squares.forEach((square) => {
+        let percent = .1;
+        square.addEventListener('mouseover', () => {
+            
+            square.style.backgroundColor = `RGBA(0,0,0,${percent})`;
+            percent += .1;
+           
+        });
+    });
+}

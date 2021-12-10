@@ -7,6 +7,9 @@
 #grid-container{
     height: 700px;
     width: 700px;
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -14,7 +17,7 @@
 }
 
 .square{
-    background-color: black; 
+    background-color:azure; 
     width: 6.25%;
     padding-bottom: 6.25%;
     position: relative;
